@@ -1,1 +1,1 @@
-Delete index.md
+delete index.md content
