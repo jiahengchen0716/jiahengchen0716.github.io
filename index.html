@@ -11,6 +11,9 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
+	  
+
+
     <title> Jiaheng Chen </title>
 	<style type="text/css">
     		body{
@@ -36,18 +39,16 @@
       color: #0000EE;
 	    text-decoration: none;
     }		
-		
- .abstract summary {
-      display: inline;
-      cursor: pointer;
-      color: #0000EE; 
+
+    .abstract-toggle {
+        cursor: pointer;
+        color: #0000EE;
     }
-    .abstract summary::-webkit-details-marker {
-      display: none; 
-    }
+
     .abstract-content {
-      margin-left: 1.5em;
-      margin-top: 0.4em;
+        display: none;     
+        margin-left: 1.5em;
+        margin-top: 0.5em;
     }
 		
 	</style>
@@ -63,16 +64,19 @@
 
     <ol reversed id="chronological">
 		<li> High-dimensional quasi-Monte Carlo via combinatorial discrepancy. With H. Jiang and N. Kirk, (2025). <a href="https://arxiv.org/abs/2508.18426" target="_blank">[arXiv]</a> </li>
+
 		<li>
-  Sharp concentration of simple random tensors II: asymmetry. With D. Sanz-Alonso, (2025). <a href="https://arxiv.org/abs/2505.24144" target="_blank">[arXiv]</a> 
-			<details class="abstract" style="display:inline;">
-    <summary>[Abstract]</summary>
-    <div class="abstract-content">
-      This paper establishes sharp concentration inequalities for simple random tensors. Our theory unveils a phenomenon that arises only for asymmetric tensors of order $p \ge 3:$ when the effective ranks of the covariances of the component random variables lie on both sides of a critical threshold, an additional logarithmic factor emerges that is not present in sharp bounds for symmetric tensors. 
- To establish our results, we develop empirical process theory for products of $p$ different function classes evaluated at $p$ different random variables, extending generic chaining techniques for quadratic and product empirical processes to higher-order settings.
-    </div>
-  </details>
+  Sharp concentration of simple random tensors II: asymmetry. With D. Sanz-Alonso, (2025).
+  <a href="https://arxiv.org/abs/2505.24144" target="_blank">[arXiv]</a>
+
+  <span class="abstract-toggle" onclick="toggleAbstract('abs1')">[Abstract]</span>
+
+  <div id="abs1" class="abstract-content">
+   This paper establishes sharp concentration inequalities for simple random tensors. Our theory unveils a phenomenon that arises only for asymmetric tensors of order $p \ge 3:$ when the effective ranks of the covariances of the component random variables lie on both sides of a critical threshold, an additional logarithmic factor emerges that is not present in sharp bounds for symmetric tensors. 
+ To establish our results, we develop empirical process theory for products of $p$ different function classes evaluated at $p$ different random variables, extending generic chaining techniques for quadratic and product empirical processes to higher-order settings. 
+  </div>
 </li>
+
 
      <li>  Optimal estimation of structured covariance operators. With O. Al-Ghattas, D. Sanz-Alonso, and N. Waniorek, (2024). <a href="https://arxiv.org/abs/2408.02109" target="_blank">[arXiv]</a>   </li>
 		
@@ -101,5 +105,13 @@
 	<h2> Contact </h2>
 	 <p> Email: jiaheng@uchicago.edu </p>
 	  <p> Office: George Herbert Jones Laboratory 307, 5747 S Ellis Avenue, Chicago, IL 60637 </p>
+
+	  <script>
+function toggleAbstract(id) {
+    var el = document.getElementById(id);
+    el.style.display = (el.style.display === "block") ? "none" : "block";
+}
+</script>
+
   </body>    
 </html>
