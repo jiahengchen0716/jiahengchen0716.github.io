@@ -120,11 +120,29 @@ This paper studies two estimators for Gaussian moment tensors: the standard samp
   </div>
 		</li>
    <li>  Covariance operator estimation: sparsity, lengthscale, and ensemble Kalman filters.  With O. Al-Ghattas, D. Sanz-Alonso, and N. Waniorek. <br>
-	 <em> Bernoulli, </em> 31(3), 2377-2402, (2025).  <a href="https://projecteuclid.org/journals/bernoulli/volume-31/issue-3/Covariance-operator-estimation-Sparsity-lengthscale-and-ensemble-Kalman-filters/10.3150/24-BEJ1809.full" target="_blank">[Journal]</a>  <a href="https://arxiv.org/abs/2310.16933" target="_blank">[arXiv]</a>  <a href="files/Slides_SIAM_UQ_2024.pdf" target="_blank">[Slides]</a>  </li>
-<li> A machine learning framework for geodesics under spherical Wasserstein-Fisher-Rao metric and its application for weighted sample generation.  With Y. Jing, L. Li, and J. Lu. <br>
+	 <em> Bernoulli, </em> 31(3), 2377-2402, (2025).  <a href="https://projecteuclid.org/journals/bernoulli/volume-31/issue-3/Covariance-operator-estimation-Sparsity-lengthscale-and-ensemble-Kalman-filters/10.3150/24-BEJ1809.full" target="_blank">[Journal]</a>  <a href="https://arxiv.org/abs/2310.16933" target="_blank">[arXiv]</a>  <a href="files/Slides_SIAM_UQ_2024.pdf" target="_blank">[Slides]</a>  
+   <span class="abstract-toggle" onclick="toggleAbstract('abs3')">[Abstract]</span>
+  <div id="abs3" class="abstract-content">
+	  This paper investigates covariance operator estimation via thresholding. For Gaussian random fields with approximately sparse covariance operators, we establish non-asymptotic bounds on the estimation error in terms of the sparsity level of the covariance and the expected supremum of the field. We prove that thresholded estimators enjoy an exponential improvement in sample complexity compared with the standard sample covariance estimator if the field has a small correlation lengthscale. As an application of the theory, we study thresholded estimation of covariance operators within ensemble Kalman filters.
+  </div>
+   </li>
+
+		
+		<li> A machine learning framework for geodesics under spherical Wasserstein-Fisher-Rao metric and its application for weighted sample generation.  With Y. Jing, L. Li, and J. Lu. <br>
 	
-	 <em> Journal of Scientific Computing, </em> 98(5), 1-34, (2024).  <a href="https://link.springer.com/article/10.1007/s10915-023-02396-y" target="_blank">[Journal]</a> </li>
-   <li> Fluctuation suppression and enhancement in interacting particle systems.  With L. Li, (2022). <a href="https://arxiv.org/abs/2204.07757" target="_blank">[arXiv]</a> <a href="files/Fluctuation_Slides.pdf" target="_blank">[Slides]</a>  </li>
+	 <em> Journal of Scientific Computing, </em> 98(5), 1-34, (2024).  <a href="https://link.springer.com/article/10.1007/s10915-023-02396-y" target="_blank">[Journal]</a> 
+		<span class="abstract-toggle" onclick="toggleAbstract('abs2')">[Abstract]</span>
+  <div id="abs2" class="abstract-content">
+	  Wasserstein–Fisher–Rao (WFR) distance is a family of metrics to gauge the discrepancy of two Radon measures, which takes into account both transportation and weight change. Spherical WFR distance is a projected version of WFR distance for probability measures so that the space of Radon measures equipped with WFR can be viewed as metric cone over the space of probability measures with spherical WFR. Compared to the case for Wasserstein distance, the understanding of geodesics under the spherical WFR is less clear and still an ongoing research focus. In this paper, we develop a deep learning framework to compute the geodesics under the spherical WFR metric, and the learned geodesics can be adopted to generate weighted samples. Our approach is based on a Benamou–Brenier type dynamic formulation for spherical WFR. To overcome the difficulty in enforcing the boundary constraint brought by the weight change, a Kullback–Leibler divergence term based on the inverse map is introduced into the cost function. Moreover, a new regularization term using the particle velocity is introduced as a substitute for the Hamilton–Jacobi equation for the potential in dynamic formula. When used for sample generation, our framework can be beneficial for applications with given weighted samples, especially in the Bayesian inference, compared to sample generation with previous flow models.
+  </div>
+		</li>
+   
+		<li> Fluctuation suppression and enhancement in interacting particle systems.  With L. Li, (2022). <a href="https://arxiv.org/abs/2204.07757" target="_blank">[arXiv]</a> <a href="files/Fluctuation_Slides.pdf" target="_blank">[Slides]</a> 
+				<span class="abstract-toggle" onclick="toggleAbstract('abs1')">[Abstract]</span>
+  <div id="abs1" class="abstract-content">
+We investigate in this work the effects of interaction on the fluctuation of empirical measures. The systems with positive definite interaction potentials tend to exhibit smaller fluctuation compared to the fluctuation in standard Monte Carlo sampling while systems with negative definite potentials tend to exhibit larger fluctuation. Moreover, if the temperature goes to zero, the fluctuation for positive definite kernels in the long time tends to vanish to zero, while the fluctuation for negative definite kernels in the long time tends to blow up to infinity. This phenomenon may gain deeper understanding to some physical systems like the Poisson-Boltzmann system, and may help to understand the properties of some particle based variational inference sampling methods.
+  </div>
+		</li>
 	</ol>
 
 
