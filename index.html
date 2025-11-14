@@ -25,6 +25,20 @@
       color: #0000EE;
 	    text-decoration: none;
     }		
+		
+ .abstract summary {
+      display: inline;
+      cursor: pointer;
+      color: #0000EE; 
+    }
+    .abstract summary::-webkit-details-marker {
+      display: none; 
+    }
+    .abstract-content {
+      margin-left: 1.5em;
+      margin-top: 0.4em;
+    }
+		
 	</style>
   </head>
   <body>
@@ -43,7 +57,18 @@
 
     <ol reversed id="chronological">
 		<li> High-dimensional quasi-Monte Carlo via combinatorial discrepancy. With H. Jiang and N. Kirk, (2025). <a href="https://arxiv.org/abs/2508.18426" target="_blank">[arXiv]</a> </li>
-		<li> Sharp concentration of simple random tensors II: asymmetry. With D. Sanz-Alonso, (2025). <a href="https://arxiv.org/abs/2505.24144" target="_blank">[arXiv]</a>    </li>
+		<li>
+  Sharp concentration of simple random tensors II: asymmetry. With D. Sanz-Alonso, (2025).
+  <details class="abstract">
+    <summary>[abstract]</summary>
+    <div class="abstract-content">
+      This paper establishes sharp concentration inequalities for simple random tensors. Our theory unveils a phenomenon that arises only for asymmetric tensors of order $p \ge 3:$ when the effective ranks of the covariances of the component random variables lie on both sides of a critical threshold, an additional logarithmic factor emerges that is not present in sharp bounds for symmetric tensors. 
+ To establish our results, we develop empirical process theory for products of $p$ different function classes evaluated at $p$ different random variables, extending generic chaining techniques for quadratic and product empirical processes to higher-order settings.
+    </div>
+  </details>
+  <a href="https://arxiv.org/abs/2505.24144" target="_blank">[arXiv]</a>
+</li>
+
      <li>  Optimal estimation of structured covariance operators. With O. Al-Ghattas, D. Sanz-Alonso, and N. Waniorek, (2024). <a href="https://arxiv.org/abs/2408.02109" target="_blank">[arXiv]</a>   </li>
 		
 		 <li> On the estimation of Gaussian moment tensors. With O. Al-Ghattas and D. Sanz-Alonso. <br> 
