@@ -1,84 +1,159 @@
+<!DOCTYPE html>
 <html>
-  <head>
-	  <meta charset="UTF-8">
-	  <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
+<head>
+  <meta charset="UTF-8">
+  <title>Jiaheng Chen</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      color: #444444;
+      line-height: 1.7;
+      font-size: 1.05em;
+      background: white;
     }
-  };
-</script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
 
-    <title> Jiaheng Chen </title>
-	<style type="text/css">
-    		body{
-    		    line-height: 1.5;
-    		    padding: 4em 1em;
-    		    max-width:805px;
-    		    margin-left:auto;
-    		    margin-right:auto;
-		    font-size:1.05em;
-				color: #444444
-    		}
-		h1, h2{
-    color: #444444;
-}
-		li{
- 	   	    margin: .9em 0;
-		}
-		.pubs-heading-container {
-		    display: flex;
-		}
-    a:link {
-  color: #4F6BD8;
-  text-decoration: none;
-}
+    .container {
+      display: flex;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      gap: 60px;
+    }
 
+    .sidebar {
+      width: 180px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 60px;
+      align-self: flex-start;
+    }
+
+    .sidebar h1 {
+      font-size: 1.5em;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 1.5em;
+      color: #444444;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8em;
+    }
+
+a,
 a:visited {
   color: #4F6BD8;
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+.menu a {
+  cursor: pointer;
+}
+
+    .content {
+      flex: 1;
+      max-width: 700px;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    h2 {
+      font-weight: normal;
+      color: #444444;
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+
+    li {
+      margin: 0.9em 0;
+    }
+
     .abstract-toggle {
-        cursor: pointer;
-        color: #4F6BD8;
+      cursor: pointer;
+      color: #4F6BD8;
     }
 
     .abstract-content {
-    display: none;
-    margin-top: 0.5em;
-    padding: 1em;
-    background: #f7f7f7;
-    border-radius: 6px;
-    border: 1px solid #e2e2e2;
-}
+      display: none;
+      margin-top: 0.5em;
+      padding: 1em;
+      background: #f7f7f7;
+      border-radius: 6px;
+      border: 1px solid #e2e2e2;
+    }
 
-		#chronological {
-  list-style-type: circle;
-}
-		
-	</style>
-  </head>
-  <body>
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+      }
 
-    <h1> Jiaheng Chen </h1>
-    <p> Hi! I am a Ph.D. student in  <a href="https://cam.uchicago.edu" target="_blank">Computational and Applied Mathematics</a> at the University of Chicago, where I am fortunate to be advised by <a href="https://sites.google.com/a/uchicago.edu/sanz-alonso/bio?authuser=0" target="_blank">Daniel Sanz-Alonso</a>. Before coming to Chicago, I received my B.S. in Mathematics and Applied Mathematics from Shanghai Jiao Tong University in 2022. </p>
-    <p> My research lies at the intersection of applied mathematics and data science, with a particular focus on operator learning, inverse problems, data assimilation, high-dimensional probability and statistics, and Monte Carlo methods. More broadly, I am interested in how information and structure shape the limits of learning and computation.    </p>
-	  
+      .sidebar {
+        width: auto;
+        position: static;
+      }
 
-<p>
-      <a href="publications.html">Publications</a> 
-    </p>
-	  
-	    <br>
-    <h2 style="display:inline">Publications and Preprints</h2>
+      .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1em 1.5em;
+      }
+    }
+  </style>
+</head>
 
-    <ul id="chronological">
-		
-       <li> Convergence rates for learning pseudo-differential operators. With D. Sanz-Alonso, (2026).
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h1>Jiaheng Chen</h1>
+      <div class="menu">
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('publications')">Publications</a>
+        <a onclick="showSection('teaching')">Teaching</a>
+        <a onclick="showSection('miscellanea')">Miscellanea</a>
+        <a href="CV.pdf" target="_blank">CV</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <div id="home" class="section active">
+        <p>
+          Hi! I am a Ph.D. student in
+          <a href="https://cam.uchicago.edu" target="_blank">Computational and Applied Mathematics</a>
+          at the University of Chicago, where I am fortunate to be advised by
+          <a href="https://sites.google.com/a/uchicago.edu/sanz-alonso/bio?authuser=0" target="_blank">Daniel Sanz-Alonso</a>.
+          Before coming to Chicago, I received my B.S. in Mathematics and Applied Mathematics
+          from Shanghai Jiao Tong University in 2022.
+        </p>
+
+        <p>
+          My research lies at the intersection of applied mathematics and data science,
+          with a particular focus on operator learning, inverse problems, data assimilation,
+          high-dimensional probability and statistics, and Monte Carlo methods.
+          More broadly, I am interested in how information and structure shape the limits
+          of learning and computation.
+        </p>
+      </div>
+
+      <div id="publications" class="section">
+        <h2>Publications and Preprints</h2>
+        <ul>
+         <li> Convergence rates for learning pseudo-differential operators. With D. Sanz-Alonso, (2026).
 			<br>
 			<a href="http://arxiv.org/abs/2601.04473" target="_blank">[arXiv]</a>
  			<span class="abstract-toggle" onclick="toggleAbstract('abs10')">[Abstract]</span>
@@ -172,38 +247,52 @@ To derive lower bounds for banded and $L^q$-sparse classes, we introduce a gener
   			</div>
 		</li>
 	</ul>
+      </div>
 
+      <div id="teaching" class="section">
+        <h2>Teaching</h2>
+        <p><em>University of Chicago Teaching Assistant</em></p>
+        <ul>
+          <li>STAT/CAAM 31511: Monte Carlo Simulation, Spring 2026</li>
+          <li>STAT/CAAM 31521: Applied Stochastic Processes, Spring 2025</li>
+          <li>STAT/CAAM 31050: Applied Approximation Theory, Spring 2024</li>
+          <li>STAT/CAAM 38100: Measure-Theoretic Probability I, Winter 2024</li>
+          <li>STAT/CAAM 31150: Inverse Problems and Data Assimilation, Autumn 2023</li>
+        </ul>
+      </div>
 
+      <div id="miscellanea" class="section">
+        <h2>Miscellanea</h2>
+        <ul>
+          <li>
+            <a href="https://apod.nasa.gov/apod/" target="_blank">Astronomy Picture of the Day</a>,
+            <a href="https://www.simonsfoundation.org/series/science-lives/" target="_blank">Science Lives</a>,
+            <a href="https://www.ingmarbergman.se/en" target="_blank">Ingmar Bergman</a>,
+            <a href="https://www.ihes.fr/~gromov/" target="_blank">Misha Gromov</a>,
+            <a href="https://han-kang.net" target="_blank">Han Kang</a>,
+            <a href="https://rinkokawauchi.com/en/" target="_blank">Rinko Kawauchi</a>,
+			<a href="https://www.youtube.com/watch?v=-Bxpm0EmOMU" target="_blank">Clair de lune</a>, 
+			  <a href="https://www.youtube.com/watch?v=OeP4FFr88SQ" target="_blank">Mr. Tambourine Man</a>, 
+			  <a href="https://en.wikipedia.org/wiki/The_Third_Bank_of_the_River_(short_story)" target="_blank">The Third Bank of the River</a> <a href="https://www.99csw.com/article/4473.htm" target="_blank">(河的第三条岸)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-	  
-    <h2> Teaching </h2>
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
 
-	  
-		  
-	 	<p> <em> University of Chicago Teaching Assistant </em> </p>
-		  <ul id="chronological">
-	  <li> STAT/CAAM 31511: Monte Carlo Simulation, Spring 2026 </li>
-    	<li> STAT/CAAM 31521: Applied Stochastic Processes, Spring 2025 </li>
-	  	<li> STAT/CAAM 31050: Applied Approximation Theory, Spring 2024 </li>
-       	<li> STAT/CAAM 38100: Measure-Theoretic Probability I, Winter 2024 </li>
-	  	<li> STAT/CAAM 31150: Inverse Problems and Data Assimilation, Autumn 2023 </li>
-</ul>
-
-	  <h2> Miscellanea </h2>
-
-	  <ul id="chronological">
-<!--  <li> Some random readings <a href="files/Some random readings.pdf" target="_blank">[PDF]</a></li>   -->
-		<li> <a href="https://apod.nasa.gov/apod/" target="_blank">Astronomy Picture of the Day</a>,  <a href="https://www.simonsfoundation.org/series/science-lives/" target="_blank">Science Lives</a>, <a href="https://www.ingmarbergman.se/en" target="_blank">Ingmar Bergman</a>, <a href="https://www.ihes.fr/~gromov/" target="_blank">Misha Gromov</a>, <a href="https://han-kang.net" target="_blank">Han Kang</a>, <a href="https://rinkokawauchi.com/en/" target="_blank">Rinko Kawauchi</a>, <a href="https://www.youtube.com/watch?v=-Bxpm0EmOMU" target="_blank">Clair de lune</a>, <a href="https://www.youtube.com/watch?v=OeP4FFr88SQ" target="_blank">Mr. Tambourine Man</a>, <a href="https://en.wikipedia.org/wiki/The_Third_Bank_of_the_River_(short_story)" target="_blank">The Third Bank of the River</a> <a href="https://www.99csw.com/article/4473.htm" target="_blank">(河的第三条岸)</a> </li>
-		   
-</ul>
-	
-	  
-	  <script>
-function toggleAbstract(id) {
-    var el = document.getElementById(id);
-    el.style.display = (el.style.display === "block") ? "none" : "block";
-}
-</script>
-
-  </body>    
+    function toggleAbstract(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
 </html>
