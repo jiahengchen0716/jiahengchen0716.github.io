@@ -15,6 +15,38 @@
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
 
+
+	<script>
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+
+    const menuLinks = document.querySelectorAll('.menu a[data-section]');
+    menuLinks.forEach(link => {
+      link.classList.remove('active');
+    });
+
+    const activeLink = document.querySelector(`.menu a[data-section="${sectionId}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+  }
+
+  function toggleAbstract(id) {
+    const el = document.getElementById(id);
+    const isOpening = (el.style.display !== "block");
+    el.style.display = isOpening ? "block" : "none";
+
+    if (isOpening && window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise([el]);
+    }
+  }
+</script>
+	
+
   <style>
     body {
       margin: 0;
@@ -132,37 +164,7 @@ ul {
         flex-wrap: wrap;
         gap: 1em 1.5em;
       }
-    }
-
-	  <script>
-  function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-      section.classList.remove('active');
-    });
-    document.getElementById(sectionId).classList.add('active');
-
-    const menuLinks = document.querySelectorAll('.menu a[data-section]');
-    menuLinks.forEach(link => {
-      link.classList.remove('active');
-    });
-
-    const activeLink = document.querySelector(`.menu a[data-section="${sectionId}"]`);
-    if (activeLink) {
-      activeLink.classList.add('active');
-    }
-  }
-
-  function toggleAbstract(id) {
-    const el = document.getElementById(id);
-    const isOpening = (el.style.display !== "block");
-    el.style.display = isOpening ? "block" : "none";
-
-    if (isOpening && window.MathJax && MathJax.typesetPromise) {
-      MathJax.typesetPromise([el]);
-    }
-  }
-</script>
+    }  、
 	  
   </style>
 </head>
