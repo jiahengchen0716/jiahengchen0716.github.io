@@ -16,35 +16,7 @@
   </script>
 
 
-	<script>
-  function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-      section.classList.remove('active');
-    });
-    document.getElementById(sectionId).classList.add('active');
-
-    const menuLinks = document.querySelectorAll('.menu a[data-section]');
-    menuLinks.forEach(link => {
-      link.classList.remove('active');
-    });
-
-    const activeLink = document.querySelector(`.menu a[data-section="${sectionId}"]`);
-    if (activeLink) {
-      activeLink.classList.add('active');
-    }
-  }
-
-  function toggleAbstract(id) {
-    const el = document.getElementById(id);
-    const isOpening = (el.style.display !== "block");
-    el.style.display = isOpening ? "block" : "none";
-
-    if (isOpening && window.MathJax && MathJax.typesetPromise) {
-      MathJax.typesetPromise([el]);
-    }
-  }
-</script>
+	
 	
 
   <style>
@@ -338,18 +310,33 @@ To derive lower bounds for banded and $L^q$-sparse classes, we introduce a gener
   </div>
 
   <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(sectionId).classList.add('active');
-    }
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
 
-    function toggleAbstract(id) {
-      const el = document.getElementById(id);
-      el.style.display = (el.style.display === "block") ? "none" : "block";
+    const menuLinks = document.querySelectorAll('.menu a[data-section]');
+    menuLinks.forEach(link => {
+      link.classList.remove('active');
+    });
+
+    const activeLink = document.querySelector(`.menu a[data-section="${sectionId}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
     }
-  </script>
+  }
+
+  function toggleAbstract(id) {
+    const el = document.getElementById(id);
+    const isOpening = (el.style.display !== "block");
+    el.style.display = isOpening ? "block" : "none";
+
+    if (isOpening && window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise([el]);
+    }
+  }
+</script>
 </body>
 </html>
