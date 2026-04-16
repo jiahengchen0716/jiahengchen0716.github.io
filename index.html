@@ -147,7 +147,7 @@ ul {
       <h1>Jiaheng Chen</h1>
       <div class="menu">
 
-		  <a data-section="home" onclick="showSection('home')">Home</a>
+		  <a data-section="home" class="active" onclick="showSection('home')">Home</a>
 <a data-section="publications" onclick="showSection('publications')">Research</a>
 <a data-section="teaching" onclick="showSection('teaching')">Teaching</a>
 <a data-section="miscellanea" onclick="showSection('miscellanea')">Miscellanea</a>
@@ -310,24 +310,22 @@ To derive lower bounds for banded and $L^q$-sparse classes, we introduce a gener
 
   <script>
   function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-      section.classList.remove('active');
-    });
-    document.getElementById(sectionId).classList.add('active');
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.classList.remove('active');
+  });
+  document.getElementById(sectionId).classList.add('active');
 
-    const menuLinks = document.querySelectorAll('.menu a[data-section]');
-    menuLinks.forEach(link => {
-      link.classList.remove('active');
-    });
+  const menuLinks = document.querySelectorAll('.menu a[data-section]');
+  menuLinks.forEach(link => {
+    link.classList.remove('active');
+  });
 
-    if (sectionId !== 'home') {
-      const activeLink = document.querySelector(`.menu a[data-section="${sectionId}"]`);
-      if (activeLink) {
-        activeLink.classList.add('active');
-      }
-    }
+  const activeLink = document.querySelector(`.menu a[data-section="${sectionId}"]`);
+  if (activeLink) {
+    activeLink.classList.add('active');
   }
+}
 
   function toggleAbstract(id) {
     const el = document.getElementById(id);
