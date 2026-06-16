@@ -166,23 +166,36 @@ ul {
     }
 
     @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-        gap: 30px;
-        padding: 30px 20px;
-      }
+  .container {
+    padding: 28px 24px 60px 24px;
+  }
 
-      .sidebar {
-        width: auto;
-        position: static;
-      }
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
 
-      .menu {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1em 1.5em;
-      }
-    }
+  .sidebar h1 {
+    font-size: 1.45em;
+    margin-left: 0;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15em;
+    margin-right: 0;
+  }
+
+  .menu a,
+  .menu a:visited {
+    font-size: 1.05em;
+  }
+
+  .content {
+    margin: 45px 0 0 0;
+  }
+}
 	  
   </style>
 </head>
