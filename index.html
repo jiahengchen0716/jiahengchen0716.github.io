@@ -47,11 +47,11 @@ html {
 }
 
 .sidebar h1 {
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: normal;
   margin-top: 0;
   margin-bottom: 0;
-  color: #444444;
+  color: var(--main-color);
 }
 
 .menu {
@@ -65,9 +65,15 @@ html {
   margin: 40px 0 0 40px;
 }
 	  
+:root {
+  --main-color: #444444;
+  --link-color: #4F6BD8;
+  --light-color: #9a9a9a;
+}
+
 a,
 a:visited {
-  color: #4F6BD8;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -75,17 +81,24 @@ a:hover {
   text-decoration: none;
 }
 
-.menu a {
+.menu a,
+.menu a:visited {
+  color: var(--main-color);
   cursor: pointer;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: var(--light-color);
 }
 
 .menu a.active {
-  color: #9aa7e8;
+  color: var(--light-color);
 }
 
 .abstract-toggle {
   cursor: pointer;
-  color: #4F6BD8;
+  color: var(--link-color);
 }
     
 
