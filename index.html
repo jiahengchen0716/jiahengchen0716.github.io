@@ -147,8 +147,13 @@ ul {
 .section ul {
   margin-top: 0;
 }
-#publications ul {
-  padding-left: 1.2em;
+#publications .pub-list {
+  padding-left: 2.8em;
+  margin-top: 0;
+}
+
+#publications .pub-list > li::marker {
+  content: "[" counter(list-item) "] ";
 }
 	  
 
