@@ -156,11 +156,26 @@ ul {
   padding-left: 0.35em;
 }
 
-#publications .pub-list > li::marker {
-  content: "[" counter(list-item) "] ";
+#publications .pub-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  counter-reset: pub-counter var(--pub-count);
+}
+
+#publications .pub-list > li {
+  counter-increment: pub-counter -1;
+  position: relative;
+  padding-left: 3.8em;
+  margin: 0.9em 0;
+}
+
+#publications .pub-list > li::before {
+  content: "[" counter(pub-counter) "]";
+  position: absolute;
+  left: 0;
   color: #444444;
 }
-	  
 
     li {
       margin: 0.9em 0;
@@ -251,7 +266,7 @@ ul {
 
       <div id="publications" class="section">
 		<!--  <h2>Publications and Preprints</h2> -->
-		  <ol reversed class="pub-list">
+		 <ol class="pub-list">
 <li> Optimal multiscale learning of linear operators. With D. Sanz-Alonso, (2026).
 
 		<a href="https://arxiv.org/abs/2606.16913" target="_blank">[arXiv]</a>
@@ -396,6 +411,14 @@ ul {
       MathJax.typesetPromise([el]);
     }
   }
+	  
+document.addEventListener("DOMContentLoaded", function () {
+  const pubList = document.querySelector("#publications .pub-list");
+  if (pubList) {
+    pubList.style.setProperty("--pub-count", pubList.children.length + 1);
+  }
+});
+	  
 </script>
 </body>
 </html>
